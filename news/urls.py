@@ -11,7 +11,10 @@ urlpatterns=[
     re_path('^article/(\d+)',views.article,name ='article'),
     re_path('^search/',views.search_results,name='search_results'),
     re_path('^new/article$',views.new_article,name='new-article'),
-    re_path('^ajax/newsletter/$', views.newsletter, name='newsletter')
+    re_path('^ajax/newsletter/$', views.newsletter, name='newsletter'),
+    re_path('^api/merch/$', views.MerchList.as_view())
+    
+
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
